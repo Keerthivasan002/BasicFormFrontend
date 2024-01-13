@@ -21,7 +21,7 @@ const Create = () => {
     try{
       const userInfo ={Name, age ,email, experience,current,expected,notice};
       const postData = await axios.post(
-        "http://localhost:5000/create",
+        "https://basicformbackend-25v5.onrender.com/create",
         userInfo
       );
       if (postData.data.status === 1) {
