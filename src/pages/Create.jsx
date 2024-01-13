@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import axios from "axios";
 import "../styles/Create.css";
 import {useNavigate} from "react-router-dom"
 import { errorMessage, successMessage } from '../toast/toast.js';
+import API from '../Api/api.js';
 
 const Create = () => {
   // Name, age ,email, experience,current,expected,notice
@@ -20,8 +20,8 @@ const Create = () => {
     e.preventDefault()
     try{
       const userInfo ={Name, age ,email, experience,current,expected,notice};
-      const postData = await axios.post(
-        "http://localhost:5000/create",
+      const postData = await API.post(
+        "/create",
         userInfo
       );
       if (postData.data.status === 1) {
